@@ -2,7 +2,7 @@ language: python
 
 build:
   ci:
-    - test.sh
+    - ./test.sh
 
 integrations:
   notifications:
