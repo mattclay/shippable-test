@@ -1,12 +1,6 @@
 #!/bin/sh
 
-set -e
-set -u
-set -x
-
-env
-
-if [ "${SHIPPABLE:-}" = "true" ]; then
+if [ "${SHIPPABLE}" = "true" ]; then
     echo "It appears this job is running on Shippable instead of Travis."
     if [ "${IS_PULL_REQUEST}" = "true" ]; then
         echo "Please rebase the branch used for this pull request."
