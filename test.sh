@@ -1,5 +1,7 @@
 #!/bin/sh
 
+env
+
 if [ "${SHIPPABLE}" = "true" ]; then
     echo "It appears this job is running on Shippable instead of Travis."
     if [ "${IS_PULL_REQUEST}" = "true" ]; then
