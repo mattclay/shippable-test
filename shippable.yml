@@ -1,5 +1,16 @@
 language: python
 
+env:
+  matrix:
+    - TEST=none
+
+matrix:
+  exclude:
+    - env: TEST=none
+  include:
+    - env: TEST=1
+    - env: TEST=2
+
 build:
   ci:
     - ./test.sh
