@@ -12,7 +12,7 @@ integrations:
       on_failure: never
       on_start: never
       on_pull_request: never
-- integrationName: webhook_test
+    - integrationName: webhook_test
       type: webhook
       payload:
         - job_id=$SHIPPABLE_BUILD_ID
