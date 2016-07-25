@@ -26,6 +26,7 @@ integrations:
     - integrationName: webhook_test
       type: webhook
       payload:
+        - hello=world
         - job_id=$SHIPPABLE_BUILD_ID
         - job_number=$JOB_NUMBER
       on_success: never
