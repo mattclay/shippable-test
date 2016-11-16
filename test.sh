@@ -5,6 +5,11 @@ add-apt-repository 'ppa:fkrull/deadsnakes'
 apt-get update -qq
 apt-get install python2.4 shellcheck -qq
 
+pip install coverage
+
+which pip
+pip --version
+
 which python
 python    -V
 
