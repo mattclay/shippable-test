@@ -9,7 +9,6 @@ matrix:
     - env: TEST=none
   include:
     - env: TEST=1 FILLER=xxxxxxxxxxxxxxxxxxxxx12345
-    - env: TEST=2 FILLER=xxxxxxxxxxxxxxxxxxxxx12345
 
 build:
   ci:
