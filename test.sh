@@ -1,6 +1,7 @@
 #!/bin/bash -eux
 
-add-apt-repository ppa:fkrull/deadsnakes
+add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty-backports universe'
+add-apt-repository 'ppa:fkrull/deadsnakes'
 apt-get update -qq
 apt-get install python2.4 shellcheck -qq
 
@@ -24,3 +25,8 @@ coverage --version
 
 which shellcheck
 shellcheck --version
+
+env
+pwd
+
+ls -la
