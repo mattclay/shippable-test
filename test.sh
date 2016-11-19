@@ -31,10 +31,7 @@ coverage --version
 which shellcheck
 shellcheck --version
 
-which tox
-tox --version
-
 env
 pwd
 
-ls -la
+find .
