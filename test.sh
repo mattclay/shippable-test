@@ -1,11 +1,11 @@
 #!/bin/bash -eux
 
-shippable_retry add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty-backports universe'
-shippable_retry add-apt-repository 'ppa:fkrull/deadsnakes'
-shippable_retry apt-get update -qq
-shippable_retry apt-get install python2.4 shellcheck -qq
+add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty-backports universe'
+add-apt-repository 'ppa:fkrull/deadsnakes'
+apt-get update -qq
+apt-get install python2.4 shellcheck -qq
 
-shippable_retry pip install coverage
+pip install coverage
 
 which pip
 pip --version
