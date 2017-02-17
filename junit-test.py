@@ -71,6 +71,10 @@ another_test_case.add_error_info(message='another error message', output='\nanot
 
 test_suites = [
     TestSuite(
+        name='another-suite',
+        test_cases=[another_test_case],
+    ),
+    TestSuite(
         name='test-suite-name',  # visible in Shippable UI
         test_cases=test_cases,  # visible in Shippable UI (see notes above)
         hostname='hostname',  # not visible in Shippable UI
@@ -82,10 +86,6 @@ test_suites = [
             hello='world',
             yes='no',
         ),
-    ),
-    TestSuite(
-        name='another-suite',
-        test_cases=[another_test_case],
     ),
 ]
 
