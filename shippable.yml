@@ -13,7 +13,7 @@ matrix:
 build:
   ci:
     - pip install junit-xml
-    - ./junit-test.sh
+    - ./junit-test.py
 
 integrations:
   notifications:
