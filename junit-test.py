@@ -16,11 +16,11 @@ test_cases = [
     TestCase(name='test-case-name-skipped', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
 
     # shows error_info message and stderr (but not stdout) in Shippable UI
-    TestCase(name='test-case-name-error-no-\noutput', classname='class\nname', elapsed_sec=1.2, stdout='std\nout', stderr='std\nerr'),
+    TestCase(name='test-case-name-error-no-\noutput', classname='class\nname', elapsed_sec=1.2, stdout='std\nout', stderr='\nstd\nerr'),
     # shows failure_info message and stderr (but not stdout) in Shippable UI
-    TestCase(name='test-case-name-failure-no-\noutput', classname='class\nname', elapsed_sec=1.2, stdout='std\nout', stderr='std\nerr'),
+    TestCase(name='test-case-name-failure-no-\noutput', classname='class\nname', elapsed_sec=1.2, stdout='std\nout', stderr='\nstd\nerr'),
     # only counted as skipped in Shippable UI
-    TestCase(name='test-case-name-skipped-no-\noutput', classname='class\nname', elapsed_sec=1.2, stdout='std\nout', stderr='std\nerr'),
+    TestCase(name='test-case-name-skipped-no-\noutput', classname='class\nname', elapsed_sec=1.2, stdout='std\nout', stderr='\nstd\nerr'),
 
     # shows error_info message (empty) and error_info output (but not stdout/stderr) in Shippable UI
     TestCase(name='test-case-name-error-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
@@ -37,9 +37,9 @@ test_cases = [
     TestCase(name='test-case-name-skipped-no-stderr', classname='classname', elapsed_sec=1.2, stdout='stdout'),
 ]
 
-test_cases[1].add_error_info(message='error\nmessage', output='error\noutput')
-test_cases[2].add_failure_info(message='failure\nmessage', output='failure\noutput')
-test_cases[3].add_skipped_info(message='skipped\nmessage', output='skipped\noutput')
+test_cases[1].add_error_info(message='error\nmessage', output='\nerror\noutput')
+test_cases[2].add_failure_info(message='failure\nmessage', output='\nfailure\noutput')
+test_cases[3].add_skipped_info(message='skipped\nmessage', output='\nskipped\noutput')
 
 test_cases[4].add_error_info(message='error message')
 test_cases[5].add_failure_info(message='failure message')
