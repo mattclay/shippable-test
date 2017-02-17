@@ -15,10 +15,19 @@ test_cases = [
     # skipped tests are counted but show no output in Shippable UI
     TestCase(name='test-case-name-skipped', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
 
-    # more test cases
+    # shows error_info message and stderr (but not stdout) in Shippable UI
     TestCase(name='test-case-name-error-no-output', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # shows failure_info message and stderr (but not stdout) in Shippable UI
     TestCase(name='test-case-name-failure-no-output', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # only counted as skipped in Shippable UI
     TestCase(name='test-case-name-skipped-no-output', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+
+    # shows error_info message and stderr (but not stdout) in Shippable UI
+    TestCase(name='test-case-name-error-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # shows failure_info message and stderr (but not stdout) in Shippable UI
+    TestCase(name='test-case-name-failure-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # only counted as skipped in Shippable UI
+    TestCase(name='test-case-name-skipped-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
 ]
 
 test_cases[1].add_error_info(message='error message', output='error output')
@@ -28,6 +37,10 @@ test_cases[3].add_skipped_info(message='skipped message', output='skipped output
 test_cases[4].add_error_info(message='error message')
 test_cases[5].add_failure_info(message='failure message')
 test_cases[6].add_skipped_info(message='skipped message')
+
+test_cases[7].add_error_info(output='error output')
+test_cases[8].add_failure_info(output='failure output')
+test_cases[9].add_skipped_info(output='skipped output')
 
 test_suites = [
     TestSuite(
