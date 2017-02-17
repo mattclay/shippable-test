@@ -5,9 +5,13 @@ import datetime
 from junit_xml import TestSuite, TestCase
 
 test_cases = [
+    # passing tests (those without error_info, failure_info, skipped_info) are counted but show no output in Shippable UI
     TestCase(name='test-case-name', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # error tests show error message and error output in Shippable UI (but not stdout/stderr)
     TestCase(name='test-case-name-error', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # failure tests show failure message and failure output in Shippable UI (but not stdout/stderr)
     TestCase(name='test-case-name-failure', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    # skipped tests are counted but show no output in Shippable UI
     TestCase(name='test-case-name-skipped', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
 ]
 
@@ -17,12 +21,13 @@ test_cases[3].add_skipped_info(message='skipped message', output='skipped output
 
 test_suites = [
     TestSuite(
-        name='test-suite-name',
-        test_cases=test_cases,
-        hostname='hostname',
-        id='id',
-        package='package',
-        timestamp=datetime.datetime.utcnow().replace(microsecond=0).isoformat(),
+        name='test-suite-name',  # visible in Shippable UI
+        test_cases=test_cases,  # visible in Shippable UI (see notes above)
+        hostname='hostname',  # not visible in Shippable UI
+        id='id',  # not visible in Shippable UI
+        package='package',  # not visible in Shippable UI
+        timestamp=datetime.datetime.utcnow().replace(microsecond=0).isoformat(),  # not visible in Shippable UI
+        # not visible in Shippable UI
         properties=dict(
             hello='world',
             yes='no',
