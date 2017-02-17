@@ -62,9 +62,9 @@ test_cases[10].add_error_info(message='error message')
 test_cases[11].add_failure_info(message='failure message')
 test_cases[12].add_skipped_info(message='skipped message')
 
-test_cases[13].add_error_info(message='optimal error message', output='\noptimal\nerror\noutput')
-test_cases[14].add_failure_info(message='optimal failure message', output='\noptimal\nfailure\noutput')
-test_cases[15].add_skipped_info(message='optimal skipped message', output='\noptimal\nskipped\noutput')
+test_cases[14].add_error_info(message='optimal error message', output='\noptimal\nerror\noutput')
+test_cases[15].add_failure_info(message='optimal failure message', output='\noptimal\nfailure\noutput')
+test_cases[16].add_skipped_info(message='optimal skipped message', output='\noptimal\nskipped\noutput')
 
 test_suites = [
     TestSuite(
