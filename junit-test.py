@@ -22,9 +22,9 @@ test_cases = [
     # only counted as skipped in Shippable UI
     TestCase(name='test-case-name-skipped-no-output', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
 
-    # shows error_info message and stderr (but not stdout) in Shippable UI
+    # shows error_info message (empty) and error_info output (but not stdout/stderr) in Shippable UI
     TestCase(name='test-case-name-error-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
-    # shows failure_info message and stderr (but not stdout) in Shippable UI
+    # shows failure_info message (empty) and failure_info output (but not stdout/stderr) in Shippable UI
     TestCase(name='test-case-name-failure-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
     # only counted as skipped in Shippable UI
     TestCase(name='test-case-name-skipped-no-message', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
