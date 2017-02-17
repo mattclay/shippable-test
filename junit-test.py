@@ -35,6 +35,15 @@ test_cases = [
     TestCase(name='test-case-name-failure-no-stderr', classname='classname', elapsed_sec=1.2, stdout='stdout'),
     # only counted as skipped in Shippable UI
     TestCase(name='test-case-name-skipped-no-stderr', classname='classname', elapsed_sec=1.2, stdout='stdout'),
+
+    # optimal success
+    TestCase(name='optimal-success', classname='classname'),
+    # optimal error
+    TestCase(name='optimal-error', classname='classname'),
+    # optimal failure
+    TestCase(name='optimal-failure', classname='classname'),
+    # optimal skipped
+    TestCase(name='optimal-skipped', classname='classname'),
 ]
 
 test_cases[1].add_error_info(message='error\nmessage', output='\nerror\noutput')
@@ -52,6 +61,10 @@ test_cases[9].add_skipped_info(output='skipped output')
 test_cases[10].add_error_info(message='error message')
 test_cases[11].add_failure_info(message='failure message')
 test_cases[12].add_skipped_info(message='skipped message')
+
+test_cases[13].add_error_info(message='optimal error message', output='\noptimal\nerror\noutput')
+test_cases[14].add_failure_info(message='optimal failure message', output='\noptimal\nfailure\noutput')
+test_cases[15].add_skipped_info(message='optimal skipped message', output='\noptimal\nskipped\noutput')
 
 test_suites = [
     TestSuite(
