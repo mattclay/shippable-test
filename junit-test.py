@@ -66,6 +66,9 @@ test_cases[14].add_error_info(message='optimal error message', output='\noptimal
 test_cases[15].add_failure_info(message='optimal failure message', output='\noptimal\nfailure\noutput')
 test_cases[16].add_skipped_info(message='optimal skipped message', output='\noptimal\nskipped\noutput')
 
+another_test_case = TestCase(name='another-name', classname='another-class')
+another_test_case.add_error_info(message='another error message', output='\nanother\nerror\noutput')
+
 test_suites = [
     TestSuite(
         name='test-suite-name',  # visible in Shippable UI
@@ -79,6 +82,10 @@ test_suites = [
             hello='world',
             yes='no',
         ),
+    ),
+    TestSuite(
+        name='another-suite',
+        test_cases=[another_test_case],
     ),
 ]
 
