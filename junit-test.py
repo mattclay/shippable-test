@@ -5,12 +5,14 @@ import datetime
 from junit_xml import TestSuite, TestCase
 
 test_cases = [
-    TestCase(name='test-case-name', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    TestCase(name='test-case-name-error', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    TestCase(name='test-case-name-failure', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
+    TestCase(name='test-case-name-skipped', classname='classname', elapsed_sec=1.2, stdout='stdout', stderr='stderr'),
 ]
 
 test_cases[0].add_error_info(message='error message', output='error output')
-test_cases[0].add_failure_info(message='failure message', output='failure output')
-test_cases[0].add_skipped_info(message='skipped message', output='skipped output')
+test_cases[1].add_failure_info(message='failure message', output='failure output')
+test_cases[2].add_skipped_info(message='skipped message', output='skipped output')
 
 test_suites = [
     TestSuite(
