@@ -35,3 +35,5 @@ env
 pwd
 
 find .
+
+copy sample.json shippable/testresults/not-a-test.json
