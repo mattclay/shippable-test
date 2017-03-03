@@ -36,4 +36,4 @@ pwd
 
 find .
 
-copy sample.json shippable/testresults/not-a-test.json
+cp sample.json shippable/testresults/not-a-test.json
