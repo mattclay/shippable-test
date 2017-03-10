@@ -1,3 +1,3 @@
 #!/bin/bash -eux
 
-dpkg -S pycrypto
+env
