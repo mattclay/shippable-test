@@ -1,6 +1,9 @@
 #!/bin/bash
 
+ls -l /usr/bin/python*
+ls -l /usr/local/bin/python*
 ln -s /usr/bin/python3.5 /usr/local/bin/python
+ls -l /usr/local/bin/python*
 
 which python
 python -V
