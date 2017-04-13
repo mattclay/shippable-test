@@ -1,5 +1,8 @@
 #!/bin/bash
 
+which python
+python -V
+
 which python2
 python2 -V
 
