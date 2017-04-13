@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ln -s /usr/bin/python3.5 /usr/local/bin/python
+
 which python
 python -V
 
