@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ifconfig
+ip addr show
 
 which python
 python -V
