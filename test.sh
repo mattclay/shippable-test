@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ifconfig
+
 which python
 python -V
 
