@@ -24,3 +24,7 @@ which python3.6
 python3.6 -V
 
 env
+
+pip install pyyaml
+
+python -c 'import yaml; print(yaml.__version__);'
