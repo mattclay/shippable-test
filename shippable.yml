@@ -17,6 +17,7 @@ build:
 branches:
   except:
     - "*-patch-*"
+    - "revert-*-*"
 
 integrations:
   notifications:
