@@ -16,7 +16,7 @@ build:
 
 branches:
   except:
-    - *-patch-*
+    - "*-patch-*"
 
 integrations:
   notifications:
