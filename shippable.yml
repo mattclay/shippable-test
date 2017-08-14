@@ -9,6 +9,11 @@ matrix:
     - env: TEST=none
   include:
     - env: TEST=1
+      python: 3.5
+    - env: TEST=2
+      python: 3.5
+    - env: TEST=3
+      python: 3.5
 
 build:
   ci:
