@@ -3,4 +3,9 @@
 env
 apt-get install attr
 
-getfattr /dev/null
+touch foo
+getfattr foo
+setfattr -n user.foo foo
+getfattr foo
+setfattr -x user.foo foo
+getfattr foo
