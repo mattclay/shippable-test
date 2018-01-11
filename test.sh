@@ -1,11 +1,9 @@
 #!/bin/bash -eux
 
 env
-apt-get install attr
+uname -a
+dmesg
 
-touch foo
-getfattr foo
-setfattr -n user.foo foo
-getfattr foo
-setfattr -x user.foo foo
-getfattr foo
+cat /sys/kernel/debug/x86/pti_enabled
+cat /sys/kernel/debug/x86/ibpb_enabled
+cat /sys/kernel/debug/x86/ibrs_enabled
