@@ -37,6 +37,3 @@ integrations:
       on_success: always
       on_failure: always
       on_cancel: always
-  hub:
-    - integrationName: aws_test
-      type: amazonKeys
