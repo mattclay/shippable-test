@@ -31,7 +31,7 @@ integrations:
       type: webhook
       payload:
         - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
-        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL - `pwd` `env` XXX `find /shippableci` XXX
+        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL - `pwd` `env` XXX `cat /shippableci/postjobenvs/*.json` XXX
       on_success: always
       on_failure: always
       on_cancel: always
