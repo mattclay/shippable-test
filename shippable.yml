@@ -27,3 +27,11 @@ integrations:
       on_failure: never
       on_start: never
       on_pull_request: never
+    - integrationName: webhook_test
+      type: webhook
+      payload:
+        - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
+        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL
+      on_success: always
+      on_failure: always
+      on_cancel: always
