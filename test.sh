@@ -3,3 +3,4 @@
 env
 pwd
 ls -l /
+find /shippableci
