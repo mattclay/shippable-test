@@ -13,6 +13,8 @@ matrix:
 build:
   ci:
     - ./test.sh
+  post_ci:
+    - aws configure list
 
 branches:
   except:
