@@ -31,7 +31,7 @@ integrations:
       type: webhook
       payload:
         - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
-        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL - `env`
+        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL - `pwd` `env`
       on_success: always
       on_failure: always
       on_cancel: always
