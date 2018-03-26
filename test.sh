@@ -4,3 +4,5 @@ env
 pwd
 ls -l /
 find /shippableci
+find /home
+find /data
