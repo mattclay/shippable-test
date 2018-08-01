@@ -5,5 +5,5 @@ env
 python --version
 python3.6 --version
 
-pip list
-pip3.6 list
+python -m pip list
+python3.6 -m pip list
