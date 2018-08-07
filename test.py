@@ -4,8 +4,9 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec
 
-import os
 import base64
+import datetime
+import os
 import requests
 import time
 
@@ -30,7 +31,7 @@ def sign(data_string):
 
 
 def output(message):
-    print(message, flush=True)
+    print(f'{datetime.datetime.now()}: {message}', flush=True)
 
 
 def main():
@@ -48,7 +49,7 @@ def main():
         signature=signature,
     )
 
-    for attempt in range(1, 10):
+    for attempt in range(1, 2):
         output(f'attempt #{attempt}')
 
         try:
