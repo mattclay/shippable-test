@@ -23,7 +23,9 @@ def sign(data_string):
 
     signature = private_key.sign(data, ec.ECDSA(hashes.SHA256()))
 
-    serialized_public_string = base64.b64encode(serialized_public).decode('utf-8')
+    b64_key = base64.b64encode(serialized_public).decode('utf-8')
+
+    serialized_public_string = f'-----BEGIN PUBLIC KEY----- {b64_key} -----END PUBLIC KEY-----'
 
     signature_string = base64.b64encode(signature).decode('utf-8')
 
@@ -42,7 +44,7 @@ def main():
 
     public_key, signature = sign(job_id)
 
-    output(public_key.strip())
+    output(public_key)
 
     payload = dict(
         job_id=job_id,
