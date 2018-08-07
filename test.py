@@ -49,7 +49,7 @@ def main():
         signature=signature,
     )
 
-    for attempt in range(1, 2):
+    for attempt in range(1, 5):
         output(f'attempt #{attempt}')
 
         try:
