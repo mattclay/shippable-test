@@ -12,7 +12,7 @@ matrix:
 
 build:
   ci:
-    - ./test.sh
+    - ./timing.sh ./test.sh
 
 branches:
   except:

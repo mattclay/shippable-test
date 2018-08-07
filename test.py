@@ -33,7 +33,7 @@ def sign(data_string):
 
 
 def output(message):
-    print(f'{datetime.datetime.now()}: {message}', flush=True)
+    print(message, flush=True)
 
 
 def main():
