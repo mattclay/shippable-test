@@ -29,15 +29,19 @@ def sign(data_string):
     return serialized_public_string, signature_string
 
 
+def output(message):
+    print(message, flush=True)
+
+
 def main():
     endpoint = 'https://u79skqnq56.execute-api.us-east-1.amazonaws.com/dev/auth'
     job_id = os.environ['JOB_ID']
 
-    print(f'job_id: {job_id}')
+    output(f'job_id: {job_id}')
 
     public_key, signature = sign(job_id)
 
-    print(public_key.strip())
+    output(public_key.strip())
 
     payload = dict(
         job_id=job_id,
@@ -45,24 +49,24 @@ def main():
     )
 
     for attempt in range(1, 10):
-        print(f'attempt #{attempt}')
+        output(f'attempt #{attempt}')
 
         try:
             response = requests.post(endpoint, json=payload)
 
             if response.status_code == 200:
-                print(response.content)
-                print('success')
+                output(response.content)
+                output('success')
                 exit(0)
             else:
-                print(response.content)
+                output(response.content)
         except requests.RequestException as ex:
-            print(ex)
+            output(ex)
             pass
 
         time.sleep(3)
 
-    print('failed')
+    output('failed')
     exit(1)
 
 
