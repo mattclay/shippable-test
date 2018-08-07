@@ -16,14 +16,14 @@ def sign(data_string):
     public_key = private_key.public_key()
 
     serialized_public = public_key.public_bytes(
-        encoding=serialization.Encoding.PEM,
+        encoding=serialization.Encoding.DER,
         format=serialization.PublicFormat.SubjectPublicKeyInfo)
 
     data = data_string.encode('utf-8')
 
     signature = private_key.sign(data, ec.ECDSA(hashes.SHA256()))
 
-    serialized_public_string = serialized_public.decode('utf-8')
+    serialized_public_string = base64.b64encode(serialized_public).decode('utf-8')
 
     signature_string = base64.b64encode(signature).decode('utf-8')
 
