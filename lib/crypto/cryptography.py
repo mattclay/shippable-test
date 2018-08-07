@@ -1,3 +1,4 @@
+"""Signature generation using the python cryptography package."""
 from __future__ import absolute_import, print_function
 
 import base64

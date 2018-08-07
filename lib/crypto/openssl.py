@@ -1,3 +1,4 @@
+"""Signature generation using openssl as a fallback when the python cryptography package is not available."""
 from __future__ import absolute_import, print_function
 
 import base64
