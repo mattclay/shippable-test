@@ -15,6 +15,8 @@ def main():
 
     public_key, signature = sign(job_id)
 
+    # single-line public key representation based on, but not conforming to, RFC7468
+    # using a single line avoids issues with timestamps prefixed to each line of console output
     display.info(f'-----BEGIN PUBLIC KEY----- {public_key} -----END PUBLIC KEY-----')
 
     payload = dict(
