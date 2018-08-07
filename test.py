@@ -1,8 +1,8 @@
 #!/usr/bin/env python3.6
 
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives import hashes, serialization
-from cryptography.hazmat.primitives.asymmetric import ec
+# from cryptography.hazmat.backends import default_backend
+# from cryptography.hazmat.primitives import hashes, serialization
+# from cryptography.hazmat.primitives.asymmetric import ec
 
 import base64
 import datetime
@@ -12,25 +12,25 @@ import time
 import subprocess
 
 
-def sign_cryptography(data_string):
-    private_key = ec.generate_private_key(ec.SECP384R1(), default_backend())
-    public_key = private_key.public_key()
-
-    serialized_public = public_key.public_bytes(
-        encoding=serialization.Encoding.DER,
-        format=serialization.PublicFormat.SubjectPublicKeyInfo)
-
-    data = data_string.encode('utf-8')
-
-    signature = private_key.sign(data, ec.ECDSA(hashes.SHA256()))
-
-    b64_key = base64.b64encode(serialized_public).decode('utf-8')
-
-    serialized_public_string = f'-----BEGIN PUBLIC KEY----- {b64_key} -----END PUBLIC KEY-----'
-
-    signature_string = base64.b64encode(signature).decode('utf-8')
-
-    return serialized_public_string, signature_string
+# def sign_cryptography(data_string):
+#     private_key = ec.generate_private_key(ec.SECP384R1(), default_backend())
+#     public_key = private_key.public_key()
+#
+#     serialized_public = public_key.public_bytes(
+#         encoding=serialization.Encoding.DER,
+#         format=serialization.PublicFormat.SubjectPublicKeyInfo)
+#
+#     data = data_string.encode('utf-8')
+#
+#     signature = private_key.sign(data, ec.ECDSA(hashes.SHA256()))
+#
+#     b64_key = base64.b64encode(serialized_public).decode('utf-8')
+#
+#     serialized_public_string = f'-----BEGIN PUBLIC KEY----- {b64_key} -----END PUBLIC KEY-----'
+#
+#     signature_string = base64.b64encode(signature).decode('utf-8')
+#
+#     return serialized_public_string, signature_string
 
 
 def sign_openssl(data_string):
