@@ -59,7 +59,11 @@ def main():
                 output('success')
                 exit(0)
             else:
-                output(response.content)
+                try:
+                    message = response.json()['message']
+                    output(f'ERROR: {message}')
+                except ValueError:
+                    output(response.content)
         except requests.RequestException as ex:
             output(ex)
             pass
