@@ -41,7 +41,7 @@ def sign_openssl(data_string):
     subprocess.check_output(['openssl', 'ec', '-in', 'private.der', '-inform', 'der', '-pubout', '-out', 'public.der', '-outform', 'der'])
     subprocess.check_output(['openssl', 'dgst', '-sha256', '-sign', 'private.der', '-keyform', 'der', '-out', 'signature.out', 'data.txt'])
 
-    with open('private.der', 'rb') as fd:
+    with open('public.der', 'rb') as fd:
         serialized_public = fd.read()
 
     with open('signature.out', 'rb') as fd:
