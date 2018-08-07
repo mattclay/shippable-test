@@ -71,7 +71,7 @@ def main():
             output(ex)
             pass
 
-        time.sleep(3)
+        time.sleep(1)
 
     output('failed')
     exit(1)
