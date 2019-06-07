@@ -2,8 +2,6 @@
 
 set -ux
 
-python3.7 -m ensurepip
-python3.7 --version
-pip3.7 --version
-command -V python3.7
-command -V pip3.7
+virtualenv --python /usr/bin/python3.7 ~/.test-venv
+~/.test-venv/bin/python --version
+~/.test-venv/bin/pip --version
