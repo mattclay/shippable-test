@@ -1,3 +1,15 @@
-#!/bin/bash -eux
+#!/bin/bash
 
-dpkg -S pycrypto
+set -ux
+
+command -V python
+python --version
+
+command -V pip
+pip --version
+
+command -V python3.7
+python3.7 --version
+
+command -V pip3.7
+pip3.7 --version
