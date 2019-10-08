@@ -2,9 +2,14 @@
 
 set -ux
 
-which python
-which python2.6
-which python2.7
-which python3.5
-which python3.6
-which python3.7
+python -m pip --version
+python -m pip list
+
+python2.7 -m pip --version
+python2.7 -m pip list
+
+python3.5 -m pip --version
+python3.5 -m pip list
+
+python3.7 -m pip --version
+python3.7 -m pip list
