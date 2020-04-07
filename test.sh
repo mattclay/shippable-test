@@ -2,5 +2,4 @@
 
 set -ux
 
-openssl version
-openssl ecparam -list_curves
+exit 1
