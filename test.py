@@ -18,7 +18,7 @@ def prepare_core_ci_auth():
         job_number=int(os.environ['SHIPPABLE_JOB_NUMBER']),
     )
 
-    sign_request(request)
+    # sign_request(request)
 
     auth = dict(
         shippable=request,
