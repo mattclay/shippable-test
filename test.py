@@ -104,7 +104,7 @@ def main():
 
     try:
         response = urllib2.urlopen(request)
-        print(response.read())
+        print('OK')
     except urllib2.HTTPError as ex:
         print(ex.getcode())
         print(ex.read())
