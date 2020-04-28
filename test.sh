@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -ux
+set -eux
 
-openssl version
-openssl ecparam -list_curves
+./test.py
