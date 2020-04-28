@@ -98,7 +98,7 @@ def main():
         )
     )
 
-    data.update(dict(auth=auth))
+    # data.update(dict(auth=auth))
 
     request = MethodRequest('PUT', url, json.dumps(data), headers)
 
