@@ -6,6 +6,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import time
 import urllib2
 import uuid
 
@@ -68,6 +69,8 @@ def publish_public_key(public_key_pem_bytes):
     # display the public key as a single line to avoid mangling such as when prefixing each line with a timestamp
     sys.stdout.write(public_key_pem_string.replace('\n', ' ') + '\n')
     sys.stdout.flush()
+    # allow time for logs to become available to reduce repeated API calls
+    time.sleep(3)
 
 
 class MethodRequest(urllib2.Request):
@@ -98,7 +101,7 @@ def main():
         )
     )
 
-    # data.update(dict(auth=auth))
+    data.update(dict(auth=auth))
 
     request = MethodRequest('PUT', url, json.dumps(data), headers)
 
