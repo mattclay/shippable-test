@@ -1,0 +1,3 @@
+echo "Early"
+source /etc/drydock/.env
+echo "Late"
