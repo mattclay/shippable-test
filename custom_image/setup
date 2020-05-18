@@ -1,5 +1,0 @@
-echo "Early"
-cat /etc/drydock/.env
-echo "Mid"
-source /etc/drydock/.env
-echo "Late"
