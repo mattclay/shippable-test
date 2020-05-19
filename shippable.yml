@@ -15,12 +15,9 @@ matrix:
 
 build:
   pre_ci:
-    - docker build -t custom_image:latest custom_image
-  pre_ci_boot:
-    image_name: custom_image
-    image_tag: latest
-    pull: false
-    options: "--privileged=false --net=bridge --entrypoint /build.sh"
+    - mv /home/shippable/cexec/build.sh /home/shippable/cexec/build.base.sh
+    - cp /custom_image/build.sh /home/shippable/cexec/build.sh
+    - chmod +x /home/shippable/cexec/build.sh
   ci:
     - ./test.sh
 
