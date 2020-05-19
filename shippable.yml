@@ -20,7 +20,7 @@ build:
     image_name: custom_image
     image_tag: latest
     pull: false
-    options: "--privileged=false --net=bridge"
+    options: "--privileged=false --net=bridge --entrypoint /build.sh"
   ci:
     - ./test.sh
 

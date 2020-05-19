@@ -2,6 +2,6 @@
 
 echo "Before"
 
-source /home/shippable/cexec/build.base.sh
+source /home/shippable/cexec/build.sh
 
 echo "After"
