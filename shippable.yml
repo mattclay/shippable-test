@@ -14,10 +14,6 @@ matrix:
     - env: TEST=1
 
 build:
-  pre_ci:
-    - mv /home/shippable/cexec/build.sh /home/shippable/cexec/build.base.sh
-    - cp /custom_image/build.sh /home/shippable/cexec/build.sh
-    - chmod +x /home/shippable/cexec/build.sh
   ci:
     - ./test.sh
 

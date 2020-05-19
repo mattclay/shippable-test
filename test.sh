@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello"
+cat /home/shippable/cexec/build.sh
