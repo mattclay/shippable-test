@@ -10,4 +10,4 @@ if [ ! -f "${private_key_path}" ]; then
   echo
 fi
 
-exec /usr/local/bin/base.virtualenv "$@"
+exec /usr/bin/base.git "$@"
