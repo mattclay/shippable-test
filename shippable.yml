@@ -14,10 +14,12 @@ matrix:
     - env: TEST=1
 
 build:
+  pre_ci:
+    - docker build -t ansible-ci:latest ansible-ci
   pre_ci_boot:
-    image_name: quay.io/ansible/shippable-build-container
-    image_tag: 6.10.4.0
-    pull: true
+    image_name: ansible-ci
+    image_tag: latest
+    pull: false
     options: --privileged=true --net=bridge
   ci:
     - ./test.sh
