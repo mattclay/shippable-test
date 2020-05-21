@@ -17,7 +17,7 @@ build:
   pre_ci_boot:
     image_name: quay.io/ansible/shippable-build-container
     image_tag: 6.10.4.0
-    pull: false
+    pull: true
     options: --privileged=true --net=bridge
   ci:
     - ./test.sh
